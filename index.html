@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viweport " content="width,initial scale=1.0">
+        <title>Responsive Website Loading Page -with baground video slider  | travel
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <a href="#"  class="brand" >UMMUKULSU</a>
+            <div class="menu-btn"> </div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Exolore</a>
+                    <a href="#">Gallary</a>
+                    <a href="#">Contact</a>
+
+                </div>
+                
+            </div>
+
+        </header>
+        <section class="home">
+            <video class="video-slide active" src="1.mp4" autoplay muted loop> </video>
+            <video class="video-slide" src="4.mp4" autoplay muted loop> </video>
+            <video class="video-slide" src="2.mp4" autoplay muted loop> </video>
+            <video class="video-slide" src="3.mp4" autoplay muted loop> </video>
+            <video class="video-slide" src="5.mp4" autoplay muted loop> </video>
+            <div class="content active">
+                <h1>Blow the candle.<br><span>Make a wish</span> </h1>
+                <p> If I have wings, I would fly over. If I’m a superman, I would cover the distance between us in split seconds. How I wish I could be with you, to see you blow the light on the candles. Happy birthday, dear.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Cuteness.<br><span>Overload </span> </h1>
+                <p>Hi there, cutie! Yes, you heard me correctly. I just called you a cutie! I'm guessing you're here because you’re looking for funny</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>dont blame.<br><span>Realax </span> </h1>
+                <p>"Keep your face always toward the sunshine, and shadows will fall behind you."</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>when life <br><span> gets harder</span> </h1>
+                <p> "Just because someone stumbles and loses their path, doesn't mean they're lost forever."</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Road Trip.<br><span>Together </span> </h1>
+                <p>“If ever there is tomorrow when we’re not together…there is something you must always remember. You are braver than you believe, stronger than you seem, and smarter than you think but the most important thing is, even if we’re apart… I’ll always be with you.”</p>
+                <a href="#">Read More</a>
+            </div>
+            
+            <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f "></i></a>
+                <a href="#"><i class="fab fa-instagram "></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active "> </div>
+                <div class="nav-btn"> </div>
+                <div class="nav-btn"> </div>
+                <div class="nav-btn"> </div>
+                <div class="nav-btn"> </div>
+
+            </div>
+
+
+        </section>
+        <script type="text/javascript">
+            //javascript of responsive navigation menu
+            const menuBtn=document.querySelector(".menu-btn");
+            const navigation=document.querySelector(".navigation");
+
+            
+            menuBtn.addEventListener("click", () =>{
+                menuBtn.classList.toggle("active");
+                navigation.classList.toggle("active");
+            } );
+            //javascript for video slider navigation
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+               contents.forEach((content) => {
+                   content.classList.remove("active");
+                });
+                btns[manual].classList.add("active");
+                slides [manual].classList.add("active");
+                contents [manual].classList.add("active");
+            }
+            btns.forEach((btn,i) => {
+                btn.addEventListener("click",() =>{
+                    sliderNav(i);
+
+                });
+
+            });
+
+        </script>
+
+        
+    </body>
+
+</html>
